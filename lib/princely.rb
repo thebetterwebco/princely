@@ -71,6 +71,7 @@ class Princely
     
     # Actually call the prince command, and pass the entire data stream back.
     pdf = IO.popen(path, "w+")
+    pdf.binmode
     pdf.puts(string)
     pdf.close_write
     result = pdf.gets(nil)

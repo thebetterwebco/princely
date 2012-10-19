@@ -21,6 +21,7 @@ module PdfHelper
   def make_pdf(options = {})
     options[:stylesheets] ||= []
     options[:layout] ||= false
+    logger.info options[:layout]
     options[:template] ||= File.join(controller_path,action_name)
     
     prince = Princely.new()
